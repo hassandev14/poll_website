@@ -33,12 +33,17 @@ Route::middleware([Authenticate::class])->group(function () {
         // Dashboard Routes
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::get('/votes-list', [DashboardController::class, 'showVotes'])->name('votes.list');
+        Route::get('/detailed-votes', [DashboardController::class, 'showVotes'])->name('votes.detailed');
+
 
         Route::get('/add_poll', [PollController::class, 'create'])->name('polls.create');
         Route::post('/add_poll', [PollController::class, 'store'])->name('polls.store');
         Route::get('/edit_poll/{id}', [PollController::class, 'edit'])->name('polls.edit');
         Route::post('/edit_poll/{id}', [PollController::class, 'update'])->name('polls.update');
         Route::get('/delete_poll/{id}', [PollController::class, 'destroy'])->name('polls.delete');
+
+        // fetching active user
+        Route::get('/active_user', [LoginController::class, 'active_user'])->name('/active_user');
     
     });
     // Poll Route

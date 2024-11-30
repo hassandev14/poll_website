@@ -42,6 +42,7 @@
                             <label class="col-sm-2 control-label" for="poll-options">Poll Options</label>
                             <div class="col-sm-10">
                                 <div id="poll-options">
+                                    <!-- Default 2 Options -->
                                     @if(isset($Poll))
                                         @foreach($Poll->options as $option)
                                             <div class="input-group mb-2">
@@ -50,6 +51,11 @@
                                             </div>
                                         @endforeach
                                     @else
+                                        <!-- Default 2 Option Inputs -->
+                                        <div class="input-group mb-2">
+                                            <input type="text" class="form-control" name="options[]" placeholder="Option" required>
+                                            <input type="file" class="form-control" name="images[]" accept="image/*">
+                                        </div>
                                         <div class="input-group mb-2">
                                             <input type="text" class="form-control" name="options[]" placeholder="Option" required>
                                             <input type="file" class="form-control" name="images[]" accept="image/*">
@@ -76,11 +82,20 @@
 </div> <!-- content -->
 
 @include('footer')
+
 <script>
+    // Counter for added options
+    let optionCount = 2; // Start with 2 options
+
     document.getElementById('add-option').addEventListener('click', function () {
-        var newOption = document.createElement('div');
-        newOption.classList.add('input-group', 'mb-2');
-        newOption.innerHTML = '<input type="text" class="form-control" name="options[]" placeholder="Option" required><input type="file" class="form-control" name="images[]" accept="image/*">';
-        document.getElementById('poll-options').appendChild(newOption);
+        if (optionCount < 4) { // Maximum 4 options
+            var newOption = document.createElement('div');
+            newOption.classList.add('input-group', 'mb-2');
+            newOption.innerHTML = '<input type="text" class="form-control" name="options[]" placeholder="Option" required><input type="file" class="form-control" name="images[]" accept="image/*">';
+            document.getElementById('poll-options').appendChild(newOption);
+            optionCount++;
+        } else {
+            alert('You can only add up to 4 options.');
+        }
     });
 </script>

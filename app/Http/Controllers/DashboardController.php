@@ -18,7 +18,7 @@ class DashboardController extends Controller
    public function showVotes()
    {
       // Voting list se sabhi votes fetch karen (user aur poll info sath)
-      $votes = VotingList::with('user', 'poll')->get();
+      $votes = VotingList::with('user', 'poll', 'pollOption')->get();
 
       return view('votes_list', compact('votes'));
    }

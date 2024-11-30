@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('is_voted')->default(0);
             $table->string('role')->default('voter');
+            $table->softDeletes(); // Adds a 'deleted_at' column
             $table->rememberToken();
             $table->timestamps();
 

@@ -1,4 +1,3 @@
-<!-- resources/views/votes_list.blade.php -->
 @include('header')
 
 <div class="content">

@@ -41,4 +41,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function votes() {
+        
+        return $this->hasMany(VotingList::class, 'voter_id');  // Assuming 'VotingList' is your model for votes
+    }
 }

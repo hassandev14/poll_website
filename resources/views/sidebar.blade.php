@@ -24,6 +24,15 @@
                         </a>
                     </li>
                 @endif
+                <!-- Active User -->
+                @if(auth()->user()->role !== 'voter')
+                    <li class="form contact contact-number">
+                        <a href="/active_user" class="waves-effect">
+                            <i class="ion ion-md-call"></i> <!-- Contact icon -->
+                            <span>Active User</span>
+                        </a>
+                    </li>
+                @endif
             </ul>
         </div>
         <!-- End Sidebar Menu -->

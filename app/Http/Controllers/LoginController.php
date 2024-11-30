@@ -12,7 +12,11 @@ class LoginController extends Controller
     {
         return view('login');
     }
-
+    public function active_user()
+    {
+        $users = User::whereNull('deleted_at')->with('votes.poll')->get();  // Load votes with associated polls
+        return view('active_user',compact('users'));
+    }
     public function login(Request $request)
     {
         // Validate the request

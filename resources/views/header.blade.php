@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Dynamically set title or use a default title -->
-    <title>@yield('title', 'My Website')</title> <!-- If no title is specified, "My Website" will be used -->
+    <title>@yield('title', 'Poll Website')</title> <!-- If no title is specified, "My Website" will be used -->
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
@@ -42,7 +42,7 @@
             <div class="topbar-left">
                 <div class="text-center">
                     <a href="{{ url('/') }}" class="logo">
-                        <span class="logo-text"><span style="color: #3498db;">AcademiaX</span></span>
+                        <span class="logo-text"><span style="color: #3498db;">Poll Website</span></span>
                         <i class="ion-ios-rocket-outline logo-icon"></i>
                     </a>
                 </div>
@@ -58,8 +58,6 @@
                                 <img src="{{ asset('assets/images/users/avatar-1.jpg') }}" alt="user-img" class="rounded-circle">
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="javascript:void(0)" class="dropdown-item">Profile</a></li>
-                                <li><a href="javascript:void(0)" class="dropdown-item">Settings</a></li>
                                 <li><a href="logout" class="dropdown-item">Logout</a></li>
                             </ul>
                         </li>

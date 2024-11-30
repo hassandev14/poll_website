@@ -92,7 +92,7 @@ class PollController extends Controller
             ]);
         }
 
-        return redirect()->route('polls');
+        return redirect()->route('/polls');
     }
 
     /**

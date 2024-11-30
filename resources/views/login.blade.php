@@ -45,7 +45,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                    @endif
+                        @endif
                         <div class="form-group">
                             <div class="col-12">
                                 <input class="form-control" type="text" name="name"  placeholder="Username">

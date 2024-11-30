@@ -17,7 +17,6 @@ return new class extends Migration
             $table->unsignedBigInteger('voter_id'); // Voter ID
             $table->unsignedBigInteger('poll_id'); // Poll ID
             $table->unsignedBigInteger('poll_option_id'); // Poll Option ID
-            $table->integer('vote_count')->default(0); // Number of votes
             $table->timestamps();
         
             // Foreign key constraints
